@@ -1,8 +1,8 @@
 /*
 Instructions: 
  - You should solve all these questions using .map() function 
-*/
-
+*/  
+console.log("MAP")
 
 /*
  * Exercise 1: 
@@ -18,7 +18,10 @@ Instructions:
 */
 function doubleNumbers(arr) {
   // your code here
-
+  var result = arr.map(function(element,index,array){
+     return element * 2;
+  });
+ return result
 }
 
 /*
@@ -36,8 +39,10 @@ function doubleNumbers(arr) {
 
 function stringItUp(arr) {
   // your code here
-
-
+var Result =arr.map(function(element,index, array){
+  return element.toString()
+});
+return Result 
 }
 
 
@@ -56,7 +61,10 @@ function stringItUp(arr) {
 
 function capitalizeNames(arr) {
   // your code here
-
+ var result = arr.map(function(element,index,array){
+ return element.toUpperCase()
+ });
+ return result
 }
 
 /*
@@ -95,6 +103,11 @@ function capitalizeNames(arr) {
 
 function namesOnly(arr) {
   // your code here
+  // debugger
+  var result= arr.map(function(element,index,array){
+  return array[index].name
+  });
+  return result
 }
 /*
  * Exercise 5:  
@@ -137,7 +150,20 @@ function namesOnly(arr) {
  */
 
 function makeStrings(arr) {
-  // your code here
+  // your code her
+  // console.log(arr[index].age)
+
+  var result= arr.map(function(element,index,array){
+   if((array[index].age)>=80)
+   {
+    return array[index].name + "  " + "can go to The Matrix"
+   }
+   else{
+    return array[index].name +"  " + "is under age!!"
+   }
+
+  });
+  return result
 }
 
 /*
@@ -181,6 +207,10 @@ function makeStrings(arr) {
 
 function readyToPutInTheDOM(arr) {
   // your code here
+var result = arr.map(function(element,index,array){
+  return  "<h1>" +array[index].name +"</h1>" +"<h2>"+array[index].age +"</h2>"
+});
+return result
 }
 
 
@@ -201,11 +231,16 @@ function readyToPutInTheDOM(arr) {
 
 function doubleValues(arr) {
   // your code here
+  var result = arr.map(function(element,index,array){
+    return  element*2
+  });
+  return result
 }
 
 /*
 * Exercise 8:
-* Write a function called valTimesIndex which accepts an array and returns a new array with each value multiplied by the index it is currently at in the array.
+* Write a function called valTimesIndex which accepts an array and returns
+ a new array with each value multiplied by the index it is currently at in the array.
 *
 *
 * Test Cases :
@@ -218,8 +253,11 @@ function doubleValues(arr) {
 */
 
 function valTimesIndex(arr) {
-  // your code here   
-
+  // your code here  
+  var result = arr.map(function(element,index,array){
+   return  element * index
+  });
+   return result
 }
 
 /*
@@ -236,16 +274,30 @@ function valTimesIndex(arr) {
 
 function extractKey(arr, key) {
   // your code here 
+  var  result = arr.map(function(element,index, array){
+return  array[index].name
+  });
+  return result 
 }
 
 /*
 * Exercise 10:
-* Write a function called extractFullName which accepts an array of objects and returns a new array with the value of the key with a name of "first" and the value of a key with the name of  "last" in each object, concatenated together with a space. 
+* Write a function called extractFullName which accepts an array of objects
+ and returns a new array with the value of the key with a name of "first" and the value of a key with the name of 
+  "last" in each object, concatenated together with a space. 
 * 
 * Examples:
-* extractFullName([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia"}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele"}]) // ['Elie Schoppik', 'Tim Garcia', 'Matt Lane', 'Colt Steele']
+* extractFullName([{first: 'Elie', last:"Schoppik"}, 
+{first: 'Tim', last:"Garcia"}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele"}]) 
+
+// ['Elie Schoppik', 'Tim Garcia', 'Matt Lane', 'Colt Steele']
 */
 
-function extractFullName() {
+function extractFullName(arr) {
   // your code here 
+   var result =arr.map(function(element,index,array){
+return (array[index].first+" " + array[index].last)
+
+   });
+   return result
 }
